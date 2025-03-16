@@ -5,6 +5,8 @@ from TTS.tts.utils.text.phonemizers.espeak_wrapper import ESpeak
 from TTS.tts.utils.text.phonemizers.gruut_wrapper import Gruut
 from TTS.tts.utils.text.phonemizers.ko_kr_phonemizer import KO_KR_Phonemizer
 from TTS.tts.utils.text.phonemizers.zh_cn_phonemizer import ZH_CN_Phonemizer
+from TTS.tts.utils.text.phonemizers.gu_in_phonemizer import GU_IN_Phonemizer
+
 
 try:
     from TTS.tts.utils.text.phonemizers.ja_jp_phonemizer import JA_JP_Phonemizer
@@ -45,6 +47,8 @@ if JA_JP_Phonemizer is not None:
     PHONEMIZERS[JA_JP_Phonemizer.name()] = JA_JP_Phonemizer
     DEF_LANG_TO_PHONEMIZER["ja-jp"] = JA_JP_Phonemizer.name()
 
+PHONEMIZERS[GU_IN_Phonemizer.name()] = GU_IN_Phonemizer
+DEF_LANG_TO_PHONEMIZER["gu-in"] = GU_IN_Phonemizer.name()
 
 def get_phonemizer_by_name(name: str, **kwargs) -> BasePhonemizer:
     """Initiate a phonemizer by name
